@@ -1,0 +1,55 @@
+name: 🐛 Bug report
+description: Report a problem with gh-inline
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug, including the exact command you ran.
+      placeholder: |
+        I ran `gh inline 123 --unresolved` and got ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant output
+      description: Full command output, including any error messages. This will be rendered as a code block, so no need for backticks.
+      render: shell
+
+  - type: input
+    id: gh-inline-version
+    attributes:
+      label: gh-inline version
+      description: Output of `gh inline --version`
+    validations:
+      required: true
+
+  - type: input
+    id: gh-version
+    attributes:
+      label: gh version
+      description: Output of `gh --version`
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: OS
+      options:
+        - macOS
+        - Linux
+        - Windows
+        - Other
+    validations:
+      required: true
