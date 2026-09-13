@@ -1,0 +1,25 @@
+name: 💡 Feature request
+description: Suggest a new flag, output field, or behavior
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: What are you trying to do with inline PR comments that gh-inline can't do today?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: A new flag, a change to an existing one, a new `--json` field, etc. Example commands are helpful.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any workarounds you're using today (e.g. piping through jq), and why they fall short.

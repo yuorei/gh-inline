@@ -1,0 +1,26 @@
+go:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "*.go"
+          - go.mod
+
+tests:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "*_test.go"
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "*.md"
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file:
+          - .github/workflows/**
+
+build:
+  - changed-files:
+      - any-glob-to-any-file:
+          - Makefile
+          - .goreleaser.yml

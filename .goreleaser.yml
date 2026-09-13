@@ -1,0 +1,36 @@
+# GoReleaser config for a `gh` extension. Release assets must be named
+# "<os>-<arch>[.exe]" with no project-name prefix -- that's the layout
+# `gh extension install`/`gh extension upgrade` look for when installing a
+# precompiled binary extension. See:
+# https://docs.github.com/en/github-cli/github-cli/creating-github-cli-extensions#precompiled-binaries
+version: 2
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - env:
+      - CGO_ENABLED=0
+    goos:
+      - darwin
+      - linux
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    ldflags:
+      - -s -w -X main.version={{ .Version }}
+
+archives:
+  - format: binary
+    name_template: "{{ .Os }}-{{ .Arch }}"
+
+checksum:
+  name_template: "checksums.txt"
+
+changelog:
+  use: github-native
+
+release:
+  draft: true

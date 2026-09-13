@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Ask a question
+    about: For general usage questions, use GitHub Discussions instead of an issue.
+    url: https://github.com/yuorei/gh-inline/discussions
+  - name: Report a security vulnerability
+    about: Please do not file a public issue for security reports.
+    url: https://github.com/yuorei/gh-inline/security/advisories/new
