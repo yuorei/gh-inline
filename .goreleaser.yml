@@ -23,7 +23,7 @@ builds:
       - -s -w -X main.version={{ .Version }}
 
 archives:
-  - format: binary
+  - formats: [binary]
     name_template: "{{ .Os }}-{{ .Arch }}"
 
 checksum:
